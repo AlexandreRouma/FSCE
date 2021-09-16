@@ -15,7 +15,7 @@ namespace fsce {
     }
 
     Expression DivideClass::derive(std::string by) {
-        return ((_a * _b->derive(by)) - (_a->derive(by) * _b)) / (_b * _b);
+        return ((_a->derive(by) * _b) - (_a * _b->derive(by))) / (_b * _b);
     }
 
     Expression DivideClass::simplify(Expression self) {
