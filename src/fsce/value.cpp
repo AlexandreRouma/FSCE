@@ -27,8 +27,9 @@ namespace fsce {
         return Value(1);
     }
 
-    Expression ValueClass::simplify(Expression self) {
-        return self;
+    Expression ValueClass::simplify() {
+        // TODO:  REPLACE THIS WITH SOMETHING THAT WILL KEEP THE LINK
+        return Value(_value, _name);
     }
 
     std::string ValueClass::getName() {

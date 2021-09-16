@@ -8,7 +8,7 @@ namespace fsce {
         double evaluate();
         std::string printHuman();
         Expression derive(std::string by);
-        Expression simplify(Expression self);
+        Expression simplify();
 
         void setValue(double value);
         void setName(std::string name);

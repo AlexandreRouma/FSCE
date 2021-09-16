@@ -2,9 +2,9 @@
 #include <fsce/fsce.h>
 
 namespace fsce {
-    class SumClass : public ExpressionClass {
+    class PowerClass : public ExpressionClass {
     public:
-        SumClass(Expression a, Expression b);
+        PowerClass(Expression a, Expression b);
         double evaluate();
         std::string printHuman();
         Expression derive(std::string by);
@@ -16,5 +16,5 @@ namespace fsce {
 
     };
 
-    Expression Sum(Expression a, Expression b);
+    Expression Power(Expression a, Expression b);
 }

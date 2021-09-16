@@ -13,7 +13,7 @@ namespace fsce {
         virtual std::string printHuman() = 0;
         virtual std::string printLaTeX() { return printHuman(); }
         virtual Expression derive(std::string by) = 0;
-        virtual Expression simplify(Expression self) = 0;
+        virtual Expression simplify() = 0;
     };
 
     class Expression : public std::shared_ptr<ExpressionClass> {
@@ -25,6 +25,7 @@ namespace fsce {
         Expression operator-(Expression b);
         Expression operator*(Expression b);
         Expression operator/(Expression b);
+        Expression operator^(Expression b);
 
         explicit operator std::string() const { return (*this)->printHuman(); }
         explicit operator double() const { return (*this)->evaluate(); }
@@ -36,3 +37,4 @@ namespace fsce {
 #include <fsce/difference.h>
 #include <fsce/multiply.h>
 #include <fsce/divide.h>
+#include <fsce/power.h>

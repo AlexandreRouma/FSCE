@@ -18,9 +18,9 @@ namespace fsce {
         return _a->derive(by) + _b->derive(by);
     }
 
-    Expression SumClass::simplify(Expression self) {
-        Expression as = _a->simplify(_a);
-        Expression bs = _b->simplify(_b);
+    Expression SumClass::simplify() {
+        Expression as = _a->simplify();
+        Expression bs = _b->simplify();
 
         auto avalue = std::dynamic_pointer_cast<fsce::ValueClass>(as);
         auto bvalue = std::dynamic_pointer_cast<fsce::ValueClass>(bs);

@@ -16,4 +16,8 @@ namespace fsce {
     Expression Expression::operator/(Expression b) {
         return Expression(std::static_pointer_cast<ExpressionClass>(std::make_shared<DivideClass>(*this, b)));
     }
+
+    Expression Expression::operator^(Expression b) {
+        return Expression(std::static_pointer_cast<ExpressionClass>(std::make_shared<PowerClass>(*this, b)));
+    }
 }
