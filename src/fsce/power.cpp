@@ -16,6 +16,10 @@ namespace fsce {
     }
 
     Expression PowerClass::derive(std::string by) {
+        auto exp = std::dynamic_pointer_cast<ValueClass>(_b);
+        if (exp && exp->getName() != by) {
+            return _b * (_a ^ (_b - Value(1))) * _a->derive(by);
+        }
         throw std::exception();
     }
 

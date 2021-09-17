@@ -25,6 +25,9 @@ namespace fsce {
         auto avalue = std::dynamic_pointer_cast<fsce::ValueClass>(as);
         auto bvalue = std::dynamic_pointer_cast<fsce::ValueClass>(bs);
         
+        if (avalue != nullptr && bvalue != nullptr && avalue->getName().empty() && bvalue->getName().empty() ) {
+            return Value(avalue->evaluate() + bvalue->evaluate());
+        }
         if (avalue != nullptr && bvalue != nullptr && avalue->evaluate() == 0.0 && bvalue->evaluate() == 0.0) {
             return Value(0);
         }
